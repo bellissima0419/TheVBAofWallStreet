@@ -1,5 +1,5 @@
 # TheVBAofWallStreet
 
 ### Analyzing Stock data with VBA
-<img src="./images/TheBeeOfWallStreet.png" width="300">
+<img src="./images/TheWolfAndTheDuchess.png" width="500">
 
