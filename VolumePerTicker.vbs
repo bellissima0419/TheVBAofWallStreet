@@ -9,8 +9,10 @@ Sub StockVolume()
     Dim VolumeSum As LongLong
 
     Dim LastRow As Long
-    LastRow = Cells(Rows.Count, 1).End(xlUp).Row
 
+    'save last row number
+    LastRow = Cells(Rows.Count, 1).End(xlUp).Row
+    'add Ticker and total stock volume headers on all sheets
     ws.Range("I1").Value = "Ticker"
     ws.Range("J1").Value = "Total Stock Volume"
 
@@ -18,7 +20,7 @@ Sub StockVolume()
     Dim i As Long
 
     For i = 2 To LastRow
-
+      'Compare adjacent cells to determine if they hold the same or different value. If different value, then a new row is created in the new 2 columns.
       If ws.Cells(i + 1, 1).Value <> ws.Cells(i, 1).Value Then
 
         TickerSymbol = ws.Cells(i, 1).Value
@@ -32,6 +34,7 @@ Sub StockVolume()
         VolumeSum = 0
 
       Else
+        'When the values are the same, keep adding to the VolumeSum counter
         VolumeSum = VolumeSum + ws.Cells(i, 7).Value
       End If
 
@@ -44,7 +47,7 @@ End Sub
 
 Sub ClearContents2()
 
-' clear contents columns ticker and volume
+' clear contents of ticker and volume columns in all sheets for testing purposes
     For Each ws In Worksheets
         ws.Range("I:J").ClearContents
     Next ws
