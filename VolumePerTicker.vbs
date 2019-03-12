@@ -1,6 +1,5 @@
 Sub StockVolume()
 
-
   ' Loop through each worksheet
   For Each ws In Worksheets
     Dim TickerSymbol As String
